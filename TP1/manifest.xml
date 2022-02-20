@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifesto>
+    <metadata>
+        <titulo>TPC1 - Jacaré</titulo>
+        <data>21 de fevereiro de 2022</data>
+        <autor>José Pedro Castro Ferreira PG47375</autor>
+        <uc>Representação e Processamento de Conhecimento na Web</uc>
+    </metadata>
+    <resumo>
+        Este trabalho consistia em desenvolver uma página web simples sobre um dos seguintes temas, propostos pelo docente da UC:
+            - Jacaré
+            - Janela
+            - Japão
+            - Jarro
+            - José
+        O tema escolhido para este primeiro trabalho foi "Jacaré".
+        O intuito deste trabalho é começar a desenvolver as nossas capacidades de desenvolvimento Web, bem como explorar ferramentas como o HTML e CSS, tendo usado a biblioteca W3s para o styling da página web desenvolvida.
+    </resumo>
+    <resultados>
+        <html>
+            <nome>index.html</nome>
+            <nome>alligator.html</nome>
+            <nome>images.html</nome>
+        </html>
+        <imagem>
+            <nome>alligator2.jpg</nome>
+            <nome>american_area.gif</nome>
+            <nome>americanAlligator0.jpg</nome>
+            <nome>baby.jpg</nome>
+            <nome>baby_chinese.png</nome>
+            <nome>background_image.jpg</nome>
+            <nome>beatles_alligator.jpg</nome>
+            <nome>chinese.jpg</nome>
+            <nome>chinese_area.png</nome>
+            <nome>chineseAlligator0.jpg</nome>
+            <nome>difference.jpg</nome>
+            <nome>jacare_logo.ico</nome>
+            <nome>jacare_logo.png</nome>
+            <nome>more_differences.jpg</nome>
+            <nome>sizes.jpg</nome>
+        </imagem>
+    </resultados>
+</manifesto>
