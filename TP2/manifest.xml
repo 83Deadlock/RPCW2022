@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC2: File Server para páginas HTML</titulo>
+        <data>2022-02-24</data>
+        <autor>
+            <id>PG47375</id>
+            <nome>José Pedro Castro Ferreira</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>Este trabalho consistia na implementação de um servidor de ficheiros em javascript.</p>
+        <p>O objetivo seria criar uma página HTML para cada registo do 
+            <xref>
+                <url>https://epl.di.uminho.pt/~jcr/AULAS/ATP2021/datasets/cinemaATP.json</url>
+                <texto>dataset disponibilizado pelo docente</texto>
+            </xref> e criar um servidor de ficheiros que exibisse as páginas disponíveis a pedido do utilizador.
+        </p>
+        <p>Foi utilizado um script em python para criar as páginas HTML para os registos.</p>
+        <p>A página inicial permite ver a lista de filmes ou a lista de atores. 
+        Cada registo de filme permite ver o perfil de cada ator que participe nesse mesmo filme. 
+        De igual modo, no perfil de cada ator aparecem os filmes em que participou, com links para as páginas dos mesmos filmes.</p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>/html/index.html</url>
+            <nome>Página web principal</nome>
+        </resultado>
+        <resultado>
+            <url>/html/filmes.html</url>
+            <nome>Página com a lista de filmes</nome>
+        </resultado>
+        <resultado>
+            <url>/html/atores.html</url>
+            <nome>Página com a lista de atores</nome>
+        </resultado>
+        <resultado>
+            <url>/html/fx.html</url>
+            <nome>Páginas html dos filmes (x representa um id que varia de filme para filme)</nome>
+        </resultado>
+        <resultado>
+            <url>/html/ax.html</url>
+            <nome>Páginas html dos atores (x representa um id que varia de ator para ator)</nome>
+        </resultado>
+        <resultado>
+            <url>fileServer.js</url>
+            <nome>Programa que inicia e mantém o servidor em execução</nome>
+        </resultado>
+        <resultado>
+            <url>cinemaATP.json</url>
+            <nome>Dataset</nome>
+        </resultado>
+        <resultado>
+            <url>generator.py</url>
+            <nome>Fichiero de parsing do dataset e consequente geração de páginas HTML</nome>
+        </resultado>
+    </resultados>
+</doc>
