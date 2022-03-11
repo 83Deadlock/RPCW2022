@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC3: File Server c/ REST API</titulo>
+        <data>2022-03-15</data>
+        <autor>
+            <id>PG47375</id>
+            <nome>José Pedro Castro Ferreira</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>O objetivo deste terceiro trabalho era desenvolver novamente um fileServer. 
+        Desta vez com o acréscimo do uso de páginas HTML dinâmicas resultantes da recolha de informação de uma REST API.</p>
+        <p>O dataset no qual corremos a API foi fornecido pelo docente da UC e encontra-se disponível no <xref>
+                <url>https://github.com/83Deadlock/RPCW2022/tree/main/TP3</url>
+                <texto>repositório</texto>
+            </xref> da disciplina, tal como o código do fileServer.</p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <xref>
+                <url>db.json</url>
+                <texto>Base de Dados sobre a qual a API funciona</texto>
+            </xref>
+        </resultado>
+        <resultado>
+            <xref>
+                <url>fileServer.js</url>
+                <texto>Ficheiro de código javascript responsável pela criação do fileServer, por fazer os pedidos à API e tratar as suas respostas de modo a torná-las apresentáveis ao utilizador em formato página Web (HTML).</texto>
+            </xref>
+        </resultado>
+    </resultados>
+</doc>
