@@ -1,0 +1,67 @@
+{
+  "tasks": [
+    {
+      "Task": "Exemplo1",
+      "Type": "RPCW",
+      "Status": "TODO",
+      "DateCreated": "16/3/2022",
+      "DateDue": "22/3/2022",
+      "Author": "JPF",
+      "id": 0
+    },
+    {
+      "Task": "ExemploDone",
+      "Type": "RPCW",
+      "Status": "Done",
+      "DateCreated": "16/3/2022",
+      "DateDue": "22/3/2022",
+      "Author": "JPF",
+      "id": 1
+    },
+    {
+      "Task": "Da",
+      "Type": "DA",
+      "Author": "DA",
+      "DateCreated": "2022-03-16",
+      "DateDue": "2022-03-16",
+      "Status": "TODO",
+      "id": 2
+    },
+    {
+      "Task": "Acabar RPCW",
+      "Type": "Uni",
+      "Author": "JPF",
+      "DateCreated": "2022-03-16",
+      "DateDue": "2022-03-22",
+      "Status": "TODO",
+      "id": 3
+    },
+    {
+      "Task": "dada",
+      "Type": "dada",
+      "Author": "dada",
+      "DateCreated": "2022-03-16",
+      "DateDue": "2022-03-16",
+      "Status": "TODO",
+      "id": 4
+    },
+    {
+      "Task": "dada",
+      "Type": "dada",
+      "Author": "dada",
+      "DateCreated": "2022-03-16",
+      "DateDue": "2022-03-16",
+      "Status": "TODO",
+      "id": 5
+    },
+    {
+      "Task": "dada",
+      "Type": "dada",
+      "Author": "dada",
+      "DateCreated": "2022-03-16",
+      "DateDue": "2022-03-16",
+      "Status": "TODO",
+      "id": 6
+    }
+  ]
+}
