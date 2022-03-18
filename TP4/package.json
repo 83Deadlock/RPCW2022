@@ -1,0 +1,14 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "todo list",
+  "main": "static.js",
+  "scripts": {
+    "test": "node todoServer.js"
+  },
+  "author": "pg47375",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

@@ -1,11 +1,9 @@
-var http = require('http')
-var axios = require('axios')
-var fs = require('fs')
-var static = require('./static.js')
-var {parse} = require('querystring')
+const http = require('http')
+const axios = require('axios')
+const fs = require('fs')
+const static = require('./static.js')
+const {parse} = require('querystring')
 
-
-// Funções Auxiliares
 // Retrieves student info from request body
 function recuperaInfo(request, callback){
     if(request.headers['content-type'] == 'application/x-www-form-urlencoded'){
@@ -14,162 +12,281 @@ function recuperaInfo(request, callback){
             body += bloco.toString()
         })
         request.on('end', ()=>{
+            console.log(body)
             callback(parse(body))
         })
     }
 }
 
-// Gera confirmação do post
-function geraPostConfirm(){
-    return `
-    <html>
-    <head>
-        <title>Registo de uma Task</title>
-        <meta charset="utf-8"/>
-        <link rel="icon" href="favicon.png"/>
-        <link rel="stylesheet" href="w3.css"/>
-    </head>
-    <body>
-        <div class="w3-card-4">
-            <header>
-                <h1>Task inserida!</h1>
-            </header>
-        </div>
-
-        <div class"w3-container">
-            <p><a href="/">Aceda aqui à sua página.</a></p>
-        </div>
-    </body>
-</html>
-    `
-}
-
-///////////////////////////////////////////////////////////TP4
-function geraPagina(data, d){
-    dd = d.substring(8,10)
-    mm = d.substring(5,7)
-    yy = d.substring(0,4)
-    html = `
-    
+function generatePage(tarefas, d){
+    var done_tasks = []
+    var todo_tasks = []
+    tarefas.forEach(
+        t => {
+            if(t.status == 'realizar'){
+                todo_tasks.push(t)
+            }else{
+                done_tasks.push(t)
+            }
+        }
+    )
+    // console.log(todo_tasks)
+    let htmlPage = `
     <html>
         <head>
-            <title>TODO</title>
+            <title>ToDo List</title>
             <meta charset="utf-8"/>
             <link rel="icon" href="favicon.png"/>
             <link rel="stylesheet" href="w3.css"/>
+            <link rel="stylesheet" href="font.css"/>
         </head>
         <body>
-            <div class="w3-container w3-teal">
-                <h2>Add Task</h2>
+            <div class="w3-container w3-teal w3-padding-16">
+                TODO LIST
             </div>
 
-            <form class="w3-container" action="/tasks/insert" method="POST">
-            <div class ="w3-row-padding">
-                <div class="w3-third">
-                    <label class="w3-text-teal">Task</label>
-                    <input class="w3-input w3-light-grey" type="text" name="Task">
+            <form class="w3-container w3-padding-16" action="/tarefas/insert" method="POST">
+                <div class="w3-row-padding">
+                    <div class="w3-third">
+                        <label class="w3-text-teal"><b>Task</b></label>
+                        <input class="w3-input w3-border w3-light-grey" type="text" name="tarefa">
+                    </div>
+                    <div class="w3-third">
+                        <label class="w3-text-teal"><b>Type</b></label>
+                        <input class="w3-input w3-border w3-light-grey" type="text" name="tipo">
+                    </div>
+                    <div class="w3-third">
+                        <label class="w3-text-teal"><b>Deadline</b></label>
+                        <input class="w3-input w3-border w3-light-grey" type="date" name="deadline">
+                    </div>
                 </div>
-                <div class="w3-third">
-                    <label class="w3-text-teal">Type</label>
-                    <input class="w3-input w3-light-grey" type="text" name="Type">
+                <div class="w3-row-padding">
+                    <div class="w3-third">
+                        <label class="w3-text-teal"><b>Author</b></label>
+                        <input class="w3-input w3-border w3-light-grey" type="text" name="target">
+                    </div>
                 </div>
-                <div class="w3-third">
-                    <label class="w3-text-teal">Author</label>
-                    <input class="w3-input w3-light-grey" type="text" name="Author">
+                <div class="w3-row-padding w3-padding-16">
+                    <input class="w3-btn w3-blue-grey" type="submit" value="Submit"/>
+                    <input class="w3-btn w3-blue-grey" type="reset" value="Reset"/> 
                 </div>
-            </div>
-            <div class ="w3-row-padding">
-                <div class="w3-half">
-                <label class="w3-text-teal">Created</label>
-                <input class="w3-input w3-light-grey" type="date" name="DateCreated" value="${yy}-${mm}-${dd}">
-                </div>
-                <div class="w3-half">
-                <label class="w3-text-teal">Due Date</label>
-                <input class="w3-input w3-light-grey" type="date" name="DateDue" value="${yy}-${mm}-${dd}">
-                </div>
-            </div>
-            <div class ="w3-row-padding w3-padding-16">
-                <input class="w3-btn w3-blue-grey" type="submit" value="Submit"/>
-                <input class="w3-btn w3-blue-grey" type="reset" value="Reset"/> 
-            </div>
-  
-                
             </form>
-            <div class="w3-cell-row">
-            <div class="w3-container w3-cell">
+`
+    htmlPage += `
+            <div class="w3-row w3-teal">
+                <div class="w3-col l6 6 w3-center">
+                    TODO Tasks`
 
-                <div class="w3-container w3-center w3-teal">
-                    <h2>TODO Tasks</h2>
-                </div>
-                <table class="w3-table w3-bordered w3-white">
+    keys = ['Task','Type','Created','Deadline','Author']
+
+    htmlPage += '<table class="w3-table-all w3-centered w3-light-grey">\n<thead>\n<tr>'
+    for(let i=0; i<keys.length;i++){
+        htmlPage += `<th>${keys[i]}</th>`
+    }
+    htmlPage += '</tr></thead>'
+
+    todo_tasks.forEach(t => {
+                htmlPage += `
                     <tr>
-                        <th>Task</th>
-                        <th>Type</th>
-                        <th>Author</th>
-                        <th>Created</th>
-                        <th>Due Date</th>
+                        <td>${t.tarefa}</td>
+                        <td>${t.tipo}</td>
+                        <td>${t.data_criada}</td>
+                        <td>${t.deadline}</td>
+                        <td>${t.target}</td>
+                        <td>
+                            <form action="/tarefas/${t.id}/check" method="POST">
+                                <input class="w3-circle w3-round-large w3-light-green" type="submit" value="Done"/>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/tarefas/${t.id}/edit" method="POST">
+                                <input class="w3-circle w3-round-large w3-light-green" type="submit" value="Edit"/>
+                            </form>
+                        </td>
                     </tr>
-    `
-
-    data.forEach(
-        reg => {
-            if(reg.Status == "TODO"){
-                html += '<tr>'
-                html += `<td>${reg.Task}</td>`
-                html += `<td>${reg.Type}</td>`
-                html += `<td>${reg.Author}</td>`
-                html += `<td>${reg.DateCreated}</td>`
-                html += `<td>${reg.DateDue}</td>`
-                html += '</tr>'
-            }  
-        }
-    )
-
-    html += `   </table>
+                `
+            })  
+    htmlPage += `
+                </table>
                 </div>
-    
-                <div class="w3-container w3-cell">
-                <div class="w3-container w3-center w3-teal">
-                    <h2>Done Tasks</h2>
-                </div>
-            <table class="w3-table w3-bordered w3-white">
-                <tr>
-                    <th>Task</th>
-                    <th>Type</th>
-                    <th>Author</th>
-                    <th>Created</th>
-                    <th>Due Date</th>
-                </tr>
 `
 
-data.forEach(
-    reg => {
-        if(reg.Status == "Done"){
-            html += '<tr>'
-            html += `<td>${reg.Task}</td>`
-            html += `<td>${reg.Type}</td>`
-            html += `<td>${reg.Author}</td>`
-            html += `<td>${reg.DateCreated}</td>`
-            html += `<td>${reg.DateDue}</td>`
-            html += '</tr>'
-        } 
+    htmlPage += `
+                <div class="w3-col l6 6 w3-center">
+                    Done Tasks
+`   
+    htmlPage += '<table class="w3-table-all w3-centered w3-light-grey">\n<thead>\n<tr>'
+    for(let i=0; i<keys.length;i++){
+        htmlPage += `<th>${keys [i]}</th>`
     }
-)
+    htmlPage += '</tr></thead>'
 
-html += `   </table>
-                </div>
-            </div> 
+    done_tasks.forEach(t => {
+        htmlPage += `
+                    <tr>
+                        <td>${t.tarefa}</td>
+                        <td>${t.tipo}</td>
+                        <td>${t.data_criada}</td>
+                        <td>${t.deadline}</td>
+                        <td>${t.target}</td>
+                        <td>
+                        <form action="/tarefas/${t.id}/delete" method="POST">
+                            <input class="w3-circle w3-round-large w3-red" type="submit" value="Delete"/>
+                        </form>
+                    </td>
+                    </tr>
+                `
+            })
+    
+    htmlPage += `
+        </div></table>
+    `
+
+    htmlPage += `
         </body>
     </html>
     `
-    return html
+    return htmlPage
 }
 
-// Criação do servidor
+function generateEditPage(tarefas,tarefa,d){
+    var done_tasks = []
+    var todo_tasks = []
+    tarefas.forEach(
+        t => {
+            if(t.status == 'realizar'){
+                todo_tasks.push(t)
+            }else{
+                done_tasks.push(t)
+            }
+        }
+    )
+    // console.log(todo_tasks)
+    let htmlPage = `
+    <html>
+        <head>
+            <title>ToDo List</title>
+            <meta charset="utf-8"/>
+            <link rel="icon" href="favicon.png"/>
+            <link rel="stylesheet" href="w3.css"/>
+            <link rel="stylesheet" href="font.css"/>
+        </head>
+        <body>
+        <div class="w3-container w3-teal w3-padding-16">
+        TODO LIST
+    </div>
 
-var todoServer = http.createServer(function (req, res) {
+            <form class="w3-container w3-padding-16" action="/tarefas/${tarefa.id}/edit/confirm" method="POST">
+                <div class="w3-row-padding">
+                    <div class="w3-third">
+                        <label class="w3-text-teal"><b>Task</b></label>
+                        <input class="w3-input w3-border w3-light-grey" type="text" value="${tarefa.tarefa}" name="tarefa">
+                    </div>
+                    <div class="w3-third">
+                        <label class="w3-text-teal"><b>Type</b></label>
+                        <input class="w3-input w3-border w3-light-grey" value=${tarefa.tipo} type="text" name="tipo">
+                    </div>    
+                    <div class="w3-third">
+                        <label class="w3-text-teal"><b>Deadline</b></label>
+                        <input class="w3-input w3-border w3-light-grey" type="date" value="${tarefa.deadline}" name="deadline">
+                    </div>
+                </div>
+                <div class="w3-row-padding">
+                    <div class="w3-third">
+                        <label class="w3-text-teal"><b>Author</b></label>
+                        <input class="w3-input w3-border w3-light-grey" type="text" value="${tarefa.target}" name="target">
+                    </div>
+                </div>
+                <div class="w3-row-padding">
+                    <input class="w3-btn w3-blue-grey" type="submit" value="Submit"/>
+                    <input class="w3-btn w3-blue-grey" type="reset" value="Reset"/> 
+                </div>
+            </form>
+`
+    htmlPage += `
+            <div class="w3-row w3-teal">
+                <div class="w3-col l6 6 w3-center">
+                    TODO Tasks`
+
+    keys = ['Task','Type','Created','Deadline','Author']
+
+    htmlPage += '<table class="w3-table-all w3-centered w3-light-grey">\n<thead>\n<tr>'
+    for(let i=0; i<keys.length;i++){
+        htmlPage += `<th>${keys[i]}</th>`
+    }
+    htmlPage += '</tr></thead>'
+
+    todo_tasks.forEach(t => {
+                htmlPage += `
+                    <tr>
+                        <td>${t.tarefa}</td>
+                        <td>${t.tipo}</td>
+                        <td>${t.data_criada}</td>
+                        <td>${t.deadline}</td>
+                        <td>${t.target}</td>
+                        <td>
+                            <form action="/tarefas/${t.id}/check" method="POST">
+                                <input class="w3-circle w3-round-large w3-light-green" type="submit" value="Done"/>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/tarefas/${t.id}/edit" method="POST">
+                                <input class="w3-circle w3-round-large w3-light-green" type="submit" value="Edit"/>
+                            </form>
+                        </td>
+                    </tr>
+                `
+            })  
+    htmlPage += `
+                </table>
+                </div>
+`
+
+    htmlPage += `
+                <div class="w3-col l6 6 w3-center">
+                    DONE Tasks
+`   
+    htmlPage += '<table class="w3-table-all w3-centered w3-light-grey">\n<thead>\n<tr>'
+    for(let i=0; i<keys.length;i++){
+        htmlPage += `<th>${keys [i]}</th>`
+    }
+    htmlPage += '</tr></thead>'
+
+    done_tasks.forEach(t => {
+        htmlPage += `
+                    <tr>
+                        <td>${t.tarefa}</td>
+                        <td>${t.tipo}</td>
+                        <td>${t.data_criada}</td>
+                        <td>${t.deadline}</td>
+                        <td>${t.target}</td>
+                        <td>
+                        <form action="/tarefas/${t.id}/delete" method="POST">
+                            <input class="w3-circle w3-round-large w3-red" type="submit" value="Delete"/>
+                        </form>
+                    </td>
+                    </tr>
+                `
+            })
+    
+    htmlPage += `
+        </div></table>
+    `
+
+    htmlPage += `
+        </body>
+    </html>
+    `
+    return htmlPage
+    
+}
+
+
+var todolistServer = http.createServer(function (req, res) {
     // Logger: que pedido chegou e quando
-    var d = new Date().toISOString().substring(0, 16)
+    var today = new Date();
+    var d = today.toISOString().substring(0,16)
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     console.log(req.method + " " + req.url + " " + d)
 
     if(static.recursoEstatico(req)){
@@ -179,41 +296,21 @@ var todoServer = http.createServer(function (req, res) {
         switch(req.method){
             case "GET": 
                 // GET /alunos --------------------------------------------------------------------
-                if((req.url == "/")){
+                if((req.url == "/" || req.url == "/tarefas")){
                     axios.get("http://localhost:3000/tasks")
                         .then(response => {
-                            var respData = response.data
-                            // Add code to render page with the student's list
+                            var tarefas = response.data
+                            // console.log(tarefas)
                             res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
-                            res.write(geraPagina(respData,d))
+                            res.write(generatePage(tarefas,d))
                             res.end()
                         })
                         .catch(function(erro){
+                            // console.log(erro)
                             res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
-                            res.write("<p>Não foi possível obter a lista de alunos...")
+                            res.write("<p>Não foi possível obter a lista de tarefas...")
                             res.end()
                         })
-
-
-                }
-                // GET /alunos/:id --------------------------------------------------------------------
-                else if(/\/alunos\/(A|PG)[0-9]+$/.test(req.url)){
-                    var idAluno = req.url.split("/")[2]
-                    axios.get("http://localhost:3000/alunos?id=" + idAluno)
-                        .then( response => {
-                            let a = response.data
-                            // Add code to render page with the student record
-                            res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
-                            res.write(geraPagAluno(a[0],d))
-                            res.end()
-                        })
-                }
-                // GET /alunos/registo --------------------------------------------------------------------
-                else if(req.url == "/alunos/registo"){
-                    // Add code to render page with the student form
-                    res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
-                    res.write(geraFormAluno(d))
-                    res.end()
                 }
                 else{
                     res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
@@ -222,26 +319,103 @@ var todoServer = http.createServer(function (req, res) {
                 }
                 break
             case "POST":
-                if(req.url == '/tasks/insert'){
+                var parts = req.url.split('/')
+                // console.log(parts)
+                if(parts[2] == 'insert'){
                     recuperaInfo(req, resultado => {
-                        console.log("POST de aluno " + JSON.stringify(resultado))
-                        resultado['Status'] = "TODO"
+                        console.log("POST de tarefa " + JSON.stringify(resultado))
+                        resultado['status'] = 'realizar'
+                        resultado['data_criada'] = date
                         axios.post("http://localhost:3000/tasks", resultado)
-                        .then(resp => {
-                            res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
-                            res.write(geraPostConfirm())
-                            res.end()
+                        axios.get("http://localhost:3000/tasks")
+                            .then(response => {
+                                    res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
+                                    // console.log(response.data)
+                                    res.write(generatePage(response.data, d))
+                                    res.end()                                                
+                            })
+                            .catch(function(erro){
+                                    res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
+                                    res.write("<p>Não foi possível obter a lista de tarefas...")
+                                    res.end()
+                                })
                         })
-                        .catch( erro => {
-                            res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
-                            res.write('<p>Erro no POST: ' + erro + '</p>')
-                            res.write('<p><a href="/">Voltar</a></p>')
-                            res.end()
-                        })
-                    })
+                }
+                else if (parts[3]){
+                    switch(parts[3]){
+                        case "edit":
+                            if(parts[4] == 'confirm'){
+                                console.log('EDIT confirmed')
+                                recuperaInfo(req, resultado => {
+                                    console.log("EDIT de tarefa " + JSON.stringify(resultado))
+                                    resultado['id'] = parts[2]
+                                    resultado['status'] = "realizar"
+                                    resultado['data_criada'] = date
+                                    axios.delete("http://localhost:3000/tasks/"+parts[2])
+                                    axios.post("http://localhost:3000/tasks",resultado)
+                                    axios.get("http://localhost:3000/tasks")
+                                        .then(response => {
+                                                res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
+                                                // console.log(response.data)
+                                                res.write(generatePage(response.data, d))
+                                                res.end()                                                
+                                        })
+                                        .catch(function(erro){
+                                                res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
+                                                res.write("<p>Não foi possível obter a lista de tarefas...")
+                                                res.end()
+                                            })
+                                })
+                            }
+                            else{
+                                console.log('EDIT requested')
+                                var idTarefa = parts[2]
+                                axios.get("http://localhost:3000/tasks")
+                                    .then(resp =>{
+                                        axios.get("http://localhost:3000/tasks/"+idTarefa)
+                                        .then(tarefa => {
+                                            res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
+                                            // console.log(response.data)
+                                            res.write(generateEditPage(resp.data,tarefa.data))
+                                            res.end()
+                                        })
+                                })
+                            }
+                            break
+                        case "check":
+                            console.log('TASK DONE requested')
+                            var idTarefa = parts[2]
+                            axios.get("http://localhost:3000/tasks/"+idTarefa)
+                                .then(tarefa => {
+                                    data = tarefa.data
+                                    data['status'] = "realizada"
+                                    axios.delete("http://localhost:3000/tasks/"+idTarefa)
+                                    axios.post("http://localhost:3000/tasks",data)
+                                    axios.get("http://localhost:3000/tasks")
+                                        .then(resp => {
+                                            res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
+                                            // console.log(response.data)
+                                            res.write(generatePage(resp.data))
+                                            res.end()
+                                        })
+                                })
+                            break
+                        case "delete":
+                            console.log('DELETE TASK requested')
+                            var idTarefa = parts[2]
+                            axios.delete("http://localhost:3000/tasks/"+idTarefa)
+                            axios.get("http://localhost:3000/tasks")
+                                .then(resp => {
+                                    res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
+                                    res.write(generatePage(resp.data))
+                                    res.end()
+                            })
+                            break
+                    }
                 }
                 else{
                     res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
+                    console.log("URL recebido: " + req.url)
                     res.write('<p>Recebi um POST não suportado.</p>')
                     res.write('<p><a href="/">Voltar</a></p>')
                     res.end()
@@ -255,5 +429,5 @@ var todoServer = http.createServer(function (req, res) {
     }
 })
 
-todoServer.listen(7777)
-console.log('Servidor à  escuta na porta 7777...')
+todolistServer.listen(7777)
+console.log('Servidor à escuta na porta 7777...')
