@@ -1,0 +1,19 @@
+extends layout 
+
+block content  
+  h1.w3-center Music List
+  h2.w3-right
+    a(href="/musicas/insert") Register New Song
+  //h2 29 de Março de 2022
+  table.w3-table-all
+    tr.w3-light-green
+        th.w3-center ID
+        th.w3-center Title
+        th.w3-center Province
+    each m in musicas
+        tr
+            td.w3-center
+              a(href="/musicas/#{m.id}")= m.id 
+            td.w3-center= m.tit
+            td.w3-center
+             a(href="/musicas/prov/#{m.prov}")= m.prov

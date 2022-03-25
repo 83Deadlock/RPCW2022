@@ -1,0 +1,19 @@
+extends layout 
+
+block content  
+  //h2 29 de Março de 2022
+  table.w3-table-all
+    tr.w3-light-green
+        th.w3-center ID
+        th.w3-center Title
+        th.w3-center Musician
+        th.w3-center Location
+    each m in provincia
+        tr
+            td.w3-center
+              a(href="/musicas/#{m.id}")= m.id 
+            td.w3-center= m.tit
+            td.w3-center= m.musico
+            td.w3-center= m.local
+  p.w3-center 
+    a(href="/") Back

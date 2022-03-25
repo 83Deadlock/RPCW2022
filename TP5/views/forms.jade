@@ -1,0 +1,23 @@
+extends layout 
+
+block content 
+    h1.w3-center Register Song
+    form.w3-container(action='/musicas',method='POST')
+      label.w3-text-teal
+        b Title
+      input.w3-input.w3-border.w3-light-grey(type='text', name='tit')
+      label.w3-text-teal
+        b Musician
+      input.w3-input.w3-border.w3-light-grey(type='text', name='musico')        
+      label.w3-text-teal
+        b Province
+      input.w3-input.w3-border.w3-light-grey(type='text', name='prov')          
+      label.w3-text-teal
+        b Location
+      input.w3-input.w3-border.w3-light-grey(type='text', name='local') 
+      label.w3-text-teal
+        b Duration
+      input.w3-input.w3-border.w3-light-grey(type='text', name='duracao')
+      br
+      input.w3-btn.w3-blue-grey(type='submit', value='Submit')
+      input.w3-btn.w3-blue-grey(type='reset', value='Reset')

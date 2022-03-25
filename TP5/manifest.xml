@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <meta>
+        <titulo>TPC5: Music Archive</titulo>
+        <data>2022-03-25</data>
+        <autor>
+            <id>PG47375</id>
+            <nome>José Pedro Castro Ferreira</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>O objetivo deste quinto trabalho de casa passava por utilizar a framework express para tirar partido de templates HTML para gerar páginas HTML dinâmicas
+        para um arquivo de músicas portuguesas, assim como permitir que o utilizador registe uma música na base de dados.</p>
+    <resultados>
+        <resultado>
+            <xref>
+                <url>arq-son-EVO.json</url>
+                <texto>Dataset inicial com os registos das músicas.</texto>
+            </xref>
+        </resultado>
+        <resultado>
+            <xref>
+                <url>script.py</url>
+                <texto>Script em Python usado para tratar o dataset inicial de modo a que cada registo de música tenha um 'id' associado.</texto>
+            </xref>
+        </resultado>
+        <resultado>
+            <xref>
+                <url>arq-son2.json</url>
+                <texto>Dataset resultante do tratamento do dataset inicial.</texto>
+            </xref>
+        </resultado>
+        <resultado>
+            <xref>
+                <url>routes/index.js</url>
+                <texto>Ficheiro de código javascript responsável pela apresentação da página inicial.</texto>
+            </xref>
+        </resultado>
+        #####################
+        <resultado>
+            <xref>
+                <url>views/error.jade</url>
+                <texto>Template HTML para a página de erro.</texto>
+            </xref>
+        </resultado>
+        <resultado>
+            <xref>
+                <url>views/forms.jade</url>
+                <texto>Template HTML para a página de registo de uma música no arquivo.</texto>
+            </xref>
+        </resultado>
+        <resultado>
+            <xref>
+                <url>views/layout.jade</url>
+                <texto>Template HTML que estabelece a largura dos elementos HTML para todas as outras views.</texto>
+            </xref>
+        </resultado>
+        <resultado>
+            <xref>
+                <url>views/musica.jade</url>
+                <texto>Template HTML para a página de uma música.</texto>
+            </xref>
+        </resultado>
+        <resultado>
+            <xref>
+                <url>views/musicas.jade</url>
+                <texto>Template HTML para a página na qual é apresentada a lista de músicas.</texto>
+            </xref>
+        </resultado>
+        <resultado>
+            <xref>
+                <url>views/provincia.jade</url>
+                <texto>Template HTML para a página na qual são apresentadas todas as músicas de uma dada provínicia.</texto>
+            </xref>
+        </resultado>
+    </resultados>
+</doc>
