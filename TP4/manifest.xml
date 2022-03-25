@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <meta>
+        <titulo>TPC4: TODO List</titulo>
+        <data>2022-03-22</data>
+        <autor>
+            <id>PG47375</id>
+            <nome>José Pedro Castro Ferreira</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>O objetivo deste terceiro trabalho era desenvolver novamente um fileServer que apresentasse 
+        ao utilizador um formulário para adicionar tarefas, uma tabela ccom tarefas por realizar e outra com tarefas realizadas. </p> 
+        As páginas HTML utilizadas são dinâmicas, sendo a informação gerada a partir da resposta a pedidos get ao json-server que corre a "base de dados".</p>
+        <p>Além de consumar os conhecimentos sobre páginas HTML dinâmicas e rotas, este trabalho tinha também como objetivo a utilização de HTML forms.</p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <xref>
+                <url>db.json</url>
+                <texto>Base de Dados na qual as tarefas são inseridas e da qual são carregadas/editadas/apagadas.</texto>
+            </xref>
+        </resultado>
+        <resultado>
+            <xref>
+                <url>todoServer.js</url>
+                <texto>Ficheiro de código javascript responsável pela criação do fileServer, por fazer os pedidos à API e tratar as suas respostas de modo a torná-las apresentáveis ao utilizador em formato página Web (HTML).</texto>
+            </xref>
+        </resultado>
+    </resultados>
+</doc>
