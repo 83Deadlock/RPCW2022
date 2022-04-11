@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC7 - Navegador CLAV</titulo>
+        <data>7 de abril de 2022</data>
+        <autor>
+            <id>PG47375</id>
+            <nome>José Pedro Castro Ferreira</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>O objetivo deste trabalho passava pela construção de uma aplicação nodejs que apresentasse os dados pedidos à API CLAV.</p>
+        <p>Para simplificar a construção da aplicação, utilizamos a framework Express.</p>
+        <p>Para a view usamos o pug junto da stylesheet w3.css.</p>
+        <p>Toda a informação apresentada resulta de respostas a pedidos de GET à API. Para tal, foi necessário o uso de uma API Key fornecida pelo docente.</p>
+        <p>O objetivo era criar uma página principal, na qual estivessem listadas todas as classes de nível 1, contendo links para as descendentes.</p>
+        <p>Para além disso, na página de cada classe é mostrada informações sobre a mesma, assim como uma lista com os links das classes descendentes.</p>
+        <p>No caso de ser uma classe nível 3, é também uma apresentada uma lista com os processos relacionados ao próprio.</p>
+        <p>Porta escolhida: 4000</p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>app.js</url>
+            <texto>Aplicação web.</texto>
+        </resultado>
+        <resultado>
+            <url>routes/index.js</url>
+            <texto>Rota principal</texto>
+        </resultado>
+        <resultado>
+            <url>views/index.pug</url>
+            <texto>View da página principal</texto>
+        </resultado>
+        <resultado>
+            <url>views/class.pug</url>
+            <texto>View da página de uma classe</texto>
+        </resultado>
+        <resultado>
+            <url>apiKey.txt</url>
+            <texto>Chave para aceder à API</texto>
+        </resultado>
+    </resultados>
+</doc>
