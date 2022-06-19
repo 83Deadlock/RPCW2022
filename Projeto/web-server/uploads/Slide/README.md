@@ -1,0 +1,1 @@
+# Diretoria utilizada para guardar recursos do tipo Slide

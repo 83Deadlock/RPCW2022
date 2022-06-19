@@ -1,0 +1,35 @@
+extends layout
+block content
+    unless empty
+        h2.w3-container.w3-pale-green.w3-center
+            b  Lista de utilizadores
+            button.w3-button.w3-hover-black.w3-right.w3-round-xxlarge
+                b
+                    a(href="/admin/registo") Registar novo utilizador
+  
+        table.w3-table-all
+                tr
+                    th.w3-center Nome 
+                    th.w3-center Username
+                    th.w3-center Password
+                    th.w3-center Level
+                each u in users
+                        tr
+                            td.w3-center= u.name
+                            td.w3-center= u.username
+                            td.w3-center= u.password
+                            td.w3-center= u.level
+                            td
+                                form(action="/admin/user/delete/" + u.username method='POST')
+                                    button.w3-button.w3-right.w3-circle.w3-round-large.w3-red(class="fas fa-trash-alt" type='submit' value='Delete')
+                            td
+                                form(action="/editar/user/" + u.username method='POST')
+                                    button.w3-button.w3-right.w3-circle.w3-round-large.w3-green(class="fas fa-pencil-alt" type='submit' value='Edit')
+    
+    else
+        h2.w3-container.w3-pale-green.w3-center
+            b Não existem utilizadores registados
+    
+    div.w3-pale-green.w3-padding-16(style='position: fixed; left: 0; bottom: 0; width: 100%; text-align: center;')
+        b 
+            a(href='/feed') Voltar à página principal

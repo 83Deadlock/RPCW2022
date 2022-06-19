@@ -1,0 +1,45 @@
+extends layout
+block content 
+ h4.w3-container.w3-pale-green
+    if (sucesso)
+        div(class="w3-panel w3-green")
+            span(class="closebtn" onclick="this.parentElement.style.display='none';") &times;
+            strong Update realizado com sucesso
+
+    if (error)
+        div(class="alert")
+            span(class="closebtn" onclick="this.parentElement.style.display='none';") &times;
+            strong Username já em utilização
+
+    b.w3-text-black Informação do utilizador selecionado
+        table.w3-table-all
+            tr
+                th.w3-center Name
+                th.w3-center Username
+                th.w3-center Password
+                th.w3-center Level
+            tr
+                td.w3-center= user.name
+                td.w3-center= user.username
+                td.w3-center= user.password
+                td.w3-center= user.level
+
+
+    h2.w3-container.w3-pale-green
+        b.w3-text-black Submeta o novo username: 
+    h2.w3-container.w3-pale-green
+    form.w3-container(action='/editar/user/completo?username=' + user.username, method='POST')
+      input.w3-input.w3-border.w3-light-grey(type='text', name='uname')
+      button.w3-button.w3-circle.w3-round-large.w3-green.w3-margin(class="fas fa-check" type='submit' value='Edit')
+
+    h2.w3-container.w3-pale-green
+        b.w3-text-black Submeta o novo nome: 
+    h2.w3-container.w3-pale-green
+    form.w3-container(action='/editar/user/name/completo?username=' + user.username, method='POST')
+      input.w3-input.w3-border.w3-light-grey(type='text', name='name')
+      button.w3-button.w3-circle.w3-round-large.w3-green.w3-margin(class="fas fa-check" type='submit' value='Edit')
+    
+
+    div.w3-pale-green.w3-padding-16(style='position: fixed; left: 0; bottom: 0; width: 100%; text-align: center;')
+        b 
+            a(href='/feed') Voltar à página principal

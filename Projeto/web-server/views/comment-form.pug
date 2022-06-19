@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .w3-container.w3-sand.w3-auto
+    .w3-card-4.w3-pale-green
+      header.w3-margin-left
+        h1 
+          b Faça um novo comentário:
+      .w3-container.w3-pale-green
+        form.w3-container(action='/newComentario/' + recurso method='POST')
+            label
+              b Comentário:
+            input.w3-input.w3-pale-green.w3-margin-bottom(type="text" name="descricao" required)
+
+        div.w3-pale-green.w3-padding-16(style='position: fixed; left: 0; bottom: 0; width: 100%; text-align: center;')
+            b 
+                a(href='/feed') Voltar à página principal
+
