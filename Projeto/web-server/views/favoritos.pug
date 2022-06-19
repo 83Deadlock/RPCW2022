@@ -1,0 +1,35 @@
+extends layout
+block content 
+    unless empty
+        h2.w3-container.w3-pale-green.w3-center
+         b Lista de recursos que gostaste
+        .w3-card-4.modal(id="display")
+        table.w3-table-all
+            tr
+                th.w3-center Data de Criação
+                th.w3-center Data de Submissão
+                th.w3-center Produtor
+                th.w3-center Autor da Submissão
+                th.w3-center Título
+                th.w3-center Preview
+                th.w3-center Download
+            each f in files
+                tr
+                    td.w3-center= f.date_creation
+                    td.w3-center= f.date_submission
+                    td.w3-center= f.producer
+                    td.w3-center= f.owner_submission
+                    td.w3-center= f.title
+                    td.w3-center
+                        button.w3-button.w3-circle.w3-round-large.w3-yellow(class="fas fa-eye" type='submit' value='Comment'
+                                id='f_' + f._id, class="ficheiro", onclick="showFicheiro(" + JSON.stringify(f) + ")") 
+                    td.w3-center
+                            a(href="/download/"+f.filename download target="_blank")
+                                button.w3-button.w3-circle.w3-round-large.w3-yellow(class="fas fa-file-download")
+    else
+        h2.w3-container.w3-pale-green.w3-center 
+         b Não gostaste de nenhum recurso
+    
+    div.w3-pale-green.w3-padding-16(style='position: fixed; left: 0; bottom: 0; width: 100%; text-align: center;')
+        b 
+            a(href='/feed') Voltar à página principal

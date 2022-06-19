@@ -1,0 +1,15 @@
+extends layout
+block content 
+    h2.w3-container.w3-pale-green.w3-center
+        b  Lista de erros ao efetuar o upload
+
+    ul.w3-ul.w3-hoverable.w3-card-4.w3-border.w3-pale-green
+        each e in erro
+            h2
+                li.w3-display-container= e
+                    span(class="w3-button w3-display-right" onclick="this.parentElement.style.display='none';") &times;
+                
+    
+    div.w3-pale-green.w3-padding-16(style='position: fixed; left: 0; bottom: 0; width: 100%; text-align: center;')
+        b 
+            a(href='/feed') Voltar à página principal

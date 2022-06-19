@@ -1,0 +1,386 @@
+[
+    {
+        "_id": "62ae699ec0f98a4d1508e1b0",
+        "username": "admin1",
+        "action": "O utilizador admin1 procurou ficheiros com a palavra  EL",
+        "date": "2022-06-19 00:11:10",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6992c0f98a4d1508e1ac",
+        "username": "admin1",
+        "action": "O utilizador admin1 efetuou login ",
+        "date": "2022-06-19 00:10:58",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae698ec0f98a4d1508e1a8",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 efetuou login ",
+        "date": "2022-06-19 00:10:54",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6968c0f98a4d1508e1a2",
+        "username": "admin1",
+        "action": "O utilizador admin1 efetuou login ",
+        "date": "2022-06-19 00:10:16",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6959c0f98a4d1508e19e",
+        "username": "Popo",
+        "action": "O utilizador Popo efetuou login ",
+        "date": "2022-06-19 00:10:01",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6947c0f98a4d1508e196",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 gostou do recurso valido.zip publicado por Popo",
+        "date": "2022-06-19 00:09:43",
+        "visible": 1,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6947c0f98a4d1508e199",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 consultou os recursos do tipo Tese",
+        "date": "2022-06-19 00:09:43",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6946c0f98a4d1508e193",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 consultou os recursos do tipo Tese",
+        "date": "2022-06-19 00:09:42",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6939c0f98a4d1508e18e",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 procurou ficheiros com a palavra  primitivas",
+        "date": "2022-06-19 00:09:29",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae692ec0f98a4d1508e189",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 procurou ficheiros com a palavra  EL",
+        "date": "2022-06-19 00:09:18",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6929c0f98a4d1508e184",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 procurou ficheiros com a palavra  primitivas",
+        "date": "2022-06-19 00:09:13",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae690ac0f98a4d1508e181",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 procurou ficheiros com a palavra  primitivas",
+        "date": "2022-06-19 00:08:42",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae68edc0f98a4d1508e17e",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 procurou ficheiros com a palavra  primitivas",
+        "date": "2022-06-19 00:08:13",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae68e9c0f98a4d1508e179",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 consultou os recursos do tipo Ficha",
+        "date": "2022-06-19 00:08:08",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae68bcc0f98a4d1508e176",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 consultou os recursos do tipo Ficha",
+        "date": "2022-06-19 00:07:24",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae68b4c0f98a4d1508e171",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 procurou ficheiros com a palavra  derivadas",
+        "date": "2022-06-19 00:07:16",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae689fc0f98a4d1508e16c",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 fez download do ficheiro valido.zip",
+        "date": "2022-06-19 00:06:55",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae689dc0f98a4d1508e169",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 procurou ficheiros com a palavra  EL",
+        "date": "2022-06-19 00:06:53",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae688dc0f98a4d1508e166",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 procurou ficheiros com a palavra  EL",
+        "date": "2022-06-19 00:06:37",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6881c0f98a4d1508e163",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 procurou ficheiros com a palavra  EL",
+        "date": "2022-06-19 00:06:25",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6859c0f98a4d1508e160",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 procurou ficheiros com a palavra  EL",
+        "date": "2022-06-19 00:05:45",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6842c0f98a4d1508e15b",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 fez download do ficheiro valido.zip",
+        "date": "2022-06-19 00:05:22",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6841c0f98a4d1508e158",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 consultou os recursos do tipo Tese",
+        "date": "2022-06-19 00:05:21",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae683cc0f98a4d1508e153",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 procurou ficheiros com a palavra  EL",
+        "date": "2022-06-19 00:05:16",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae680fc0f98a4d1508e14b",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 efetuou login ",
+        "date": "2022-06-19 00:04:31",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae66a7c0f98a4d1508e140",
+        "username": "Popo",
+        "action": "O utilizador Popo consultou os recursos do tipo Ficha",
+        "date": "2022-06-18 23:58:31",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae66a3c0f98a4d1508e13b",
+        "username": "Popo",
+        "action": "O utilizador Popo consultou os recursos do tipo Tese",
+        "date": "2022-06-18 23:58:27",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae664dc0f98a4d1508e133",
+        "username": "Popo",
+        "action": "O utilizador Popo efetuou login ",
+        "date": "2022-06-18 23:57:01",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae65d6c0f98a4d1508e123",
+        "username": "Popo",
+        "action": "O utilizador Popo gostou do recurso valido.zip publicado por Popo",
+        "date": "2022-06-18 23:55:02",
+        "visible": 1,
+        "__v": 0
+    },
+    {
+        "_id": "62ae65d6c0f98a4d1508e126",
+        "username": "Popo",
+        "action": "O utilizador Popo consultou os recursos do tipo Tese",
+        "date": "2022-06-18 23:55:02",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae65d2c0f98a4d1508e120",
+        "username": "Popo",
+        "action": "O utilizador Popo consultou os recursos do tipo Tese",
+        "date": "2022-06-18 23:54:58",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae65d1c0f98a4d1508e11c",
+        "username": "Popo",
+        "action": "O utilizador Popo inseriu o ficheiro valido.zip do tipo Tese",
+        "date": "2022-06-18 23:54:57",
+        "visible": 1,
+        "__v": 0
+    },
+    {
+        "_id": "62ae65bdc0f98a4d1508e112",
+        "username": "Popo",
+        "action": "O utilizador Popo eliminou o ficheiro valido.zip do tipo Tese",
+        "date": "2022-06-18 23:54:37",
+        "visible": 1,
+        "__v": 0
+    },
+    {
+        "_id": "62ae65bdc0f98a4d1508e115",
+        "username": "Popo",
+        "action": "O utilizador Popo consultou os recursos do tipo Tese",
+        "date": "2022-06-18 23:54:37",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae65bcc0f98a4d1508e10e",
+        "username": "Popo",
+        "action": "O utilizador Popo consultou os recursos do tipo Tese",
+        "date": "2022-06-18 23:54:36",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae65b6c0f98a4d1508e109",
+        "username": "Popo",
+        "action": "O utilizador Popo consultou os recursos do tipo Ficha",
+        "date": "2022-06-18 23:54:30",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae65afc0f98a4d1508e104",
+        "username": "Popo",
+        "action": "O utilizador Popo consultou os recursos do tipo Tese",
+        "date": "2022-06-18 23:54:23",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae65a7c0f98a4d1508e100",
+        "username": "Popo",
+        "action": "O utilizador Popo inseriu o ficheiro valido2.zip do tipo Ficha",
+        "date": "2022-06-18 23:54:15",
+        "visible": 1,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6593c0f98a4d1508e0fa",
+        "username": "Popo",
+        "action": "O utilizador Popo inseriu o ficheiro valido.zip do tipo Tese",
+        "date": "2022-06-18 23:53:55",
+        "visible": 1,
+        "__v": 0
+    },
+    {
+        "_id": "62ae658ec0f98a4d1508e0f0",
+        "username": "Popo",
+        "action": "O utilizador Popo eliminou o ficheiro valido.zip do tipo Tese",
+        "date": "2022-06-18 23:53:50",
+        "visible": 1,
+        "__v": 0
+    },
+    {
+        "_id": "62ae658ec0f98a4d1508e0f3",
+        "username": "Popo",
+        "action": "O utilizador Popo consultou os recursos do tipo Tese",
+        "date": "2022-06-18 23:53:50",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae658dc0f98a4d1508e0ec",
+        "username": "Popo",
+        "action": "O utilizador Popo consultou os recursos do tipo Tese",
+        "date": "2022-06-18 23:53:49",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae658bc0f98a4d1508e0e8",
+        "username": "Popo",
+        "action": "O utilizador Popo efetuou login ",
+        "date": "2022-06-18 23:53:47",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae653fc0f98a4d1508e0e3",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 consultou os recursos do tipo Slide",
+        "date": "2022-06-18 23:52:31",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae653dc0f98a4d1508e0de",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 consultou os recursos do tipo Exame",
+        "date": "2022-06-18 23:52:29",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6536c0f98a4d1508e0d9",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 consultou os recursos do tipo Tese",
+        "date": "2022-06-18 23:52:22",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6534c0f98a4d1508e0d4",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 consultou os recursos do tipo Ficha",
+        "date": "2022-06-18 23:52:20",
+        "visible": 0,
+        "__v": 0
+    },
+    {
+        "_id": "62ae6533c0f98a4d1508e0d0",
+        "username": "ruicampos17",
+        "action": "O utilizador ruicampos17 efetuou login ",
+        "date": "2022-06-18 23:52:19",
+        "visible": 0,
+        "__v": 0
+    }
+]

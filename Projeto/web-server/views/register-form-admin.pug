@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  .w3-container.w3-sand.w3-auto
+    .w3-card-4.w3-pale-yellow
+      header.w3-margin-left
+        h1 
+          b Registo de utilizador:
+      .w3-container.w3-pale-yellow
+        form.w3-container(action='/admin/registo' method='POST')
+            label
+              b Nome:
+            input.w3-input.w3-pale-yellow.w3-margin-bottom(type="text" name="name" required)
+            label
+              b Username:
+            input.w3-input.w3-pale-yellow.w3-margin-bottom(type="text" name="username" required)
+            label
+             b Password: 
+            input.w3-input.w3-pale-yellow.w3-margin-bottom(type="password" name="password" required )
+            label 
+             b Nivel:
+            .w3-text-blue-grey 
+            
+            input(type='radio' name='level' value='producer')
+            |  Producer
+            br
+            input(type='radio' name='level' value='consumer')
+            |  Consumer
+            input.w3-input.w3-pale-yellow(disabled="disabled")
+
+            input.w3-btn.w3-margin-top.w3-margin-bottom.w3-hover-black.w3-round-xxlarge(type='submit' value='Enviar')
+        
+        if (level == "level")
+            div(class="alert")
+              span(class="closebtn" onclick="this.parentElement.style.display='none';") &times;
+              strong Falta preencher o campo nivel
+        
+        if (error)
+          div(class="alert")
+            span(class="closebtn" onclick="this.parentElement.style.display='none';") &times;
+            strong Username já em utilização
+
+      div.w3-pale-yellow.w3-padding-16(style='position: fixed; left: 0; bottom: 0; width: 100%; text-align: center;')
+        a(href='/admin/users') Voltar à página de utilizadores
+
